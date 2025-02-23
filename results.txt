@@ -1,0 +1,27 @@
+RQ1: 
+Average age of repositories: 7.98 years
+Repositories above average age: 527
+Repositories below or equal to average age: 473
+
+RQ2:
+Average merged pull requests: 4699.78
+Repositories above average merged pull requests: 204
+Repositories below or equal to average merged pull requests: 796
+RQ3:
+Average number of releases: 101.76
+Repositories above average releases: 291
+Repositories below or equal to average releases: 709
+
+RQ4:
+Average time since last update: 83.46 days
+Repositories updated frequently (below average time): 738
+Repositories updated less frequently (time greater or equal to average): 262
+
+RQ 05:
+Total number of repositories analyzed: 1000
+Total number of popular languages: 681
+Repositories using popular languages: {'TypeScript': 145, 'Python': 171, 'JavaScript': 145, 'C++': 51, 'Java': 52, 'Go': 72, 'C#': 12, 'PHP': 9, 'Ruby': 13, 'Swift': 11}
+Repositories using unpopular languages: 105
+
+RQ 06:
+Percentage of closed issues: 86.79%
