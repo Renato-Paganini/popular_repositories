@@ -243,3 +243,40 @@ def collect_and_print_repo_info(repos):
 
     print("RQ 06: ")
     print(f"Percentage of closed issues: {closed_issues_percentage:.2f}%\n")
+def export_to_csv(repos, filename="repos.csv"):
+    with open(filename, mode='w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file)
+        writer.writerow(["ID", "Name", "Stars", "Forks", "Open Issues", "Closed Issues", "PRs", "Releases", "Pushed At", "Created At", "Primary Language"])
+        for repo_edge in repos:
+            repo = repo_edge["node"]
+            repo_id = repo["id"]
+            name = repo["name"]
+            stars = repo["stargazers"]["totalCount"]
+            forks = repo["forks"]["totalCount"]
+            open_issues = repo["openIssues"]["totalCount"]
+            closed_issues = repo["closedIssues"]["totalCount"]
+            prs = repo["pullRequests"]["totalCount"]
+            releases = repo["releases"]["totalCount"]
+            pushed_at = repo["pushedAt"]
+            created_at = repo["createdAt"]
+            primary_language = repo["primaryLanguage"]["name"] if repo["primaryLanguage"] else "Unknown"
+            writer.writerow([repo_id, name, stars, forks, open_issues, closed_issues, prs, releases, pushed_at, created_at, primary_language])
+    print(f"Dados exportados para {filename} com sucesso.")
+    
+
+def get_all_repos(total):
+  try:
+      return get_popular_repos(total)
+  except Exception as e:
+      print(e)
+    
+    
+def execute(total):
+  try:
+      repos = get_all_repos(total)
+      collect_and_print_repo_info(get_all_repos(total))
+      export_to_csv(repos, csv_name)
+  except Exception as e:
+      print(e)
+
+execute(1000)
