@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 #Global variables
 
 token = ""
+csv_name = "result_file.csv"
 
 
 #Querry 
